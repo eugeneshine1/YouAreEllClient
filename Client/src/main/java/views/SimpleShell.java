@@ -68,14 +68,14 @@ public class SimpleShell {
 
                 // ids
                 if (list.contains("ids")) {
-                    String results = webber.get_ids();
+                    String results = urll.get_ids();
                     SimpleShell.prettyPrint(results);
                     continue;
                 }
 
                 // messages
                 if (list.contains("messages")) {
-                    String results = webber.get_messages();
+                    String results = urll.get_messages();
                     SimpleShell.prettyPrint(results);
                     continue;
                 }
@@ -92,6 +92,7 @@ public class SimpleShell {
                         pb.command(history.get(b));
                 } else {
                     pb.command(list);
+                    throw new IOException("IOException");
                 }
 
                 // // wait, wait, what curiousness is this?
